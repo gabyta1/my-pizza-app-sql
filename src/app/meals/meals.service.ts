@@ -74,7 +74,7 @@ export class MealsService {
 
 
   public getHttp() {
-    this.http.get('http://localhost:3000/meals')
+    this.http.get('/meals')
     .pipe(
       map(responseData => {
         console.log(responseData);
@@ -100,7 +100,7 @@ export class MealsService {
 
 
   public getMeal() {
-  return  this.http.get('http://localhost:3000/meals')
+  return  this.http.get('/meals')
     .pipe(
       map(responseData => {
         this.menu = [];

@@ -40,7 +40,7 @@ public getOrder() {
 
   public deleteItem(name: string, menus: any, menuId: number) {
     return new Promise((resolve, reject) => {
-      this.http.delete('http://localhost:3000/deleteItemMenu/' + menuId).subscribe(() => {
+      this.http.delete('/deleteItemMenu/' + menuId).subscribe(() => {
       const updateMenu = menus.filter (menu => menu.menu_id !== menuId);
       resolve(updateMenu);
     });
@@ -50,19 +50,19 @@ public getOrder() {
   }
 
   public editItemDb(item: any) {
-        this.http.patch('http://localhost:3000/editItemMenu', item).subscribe((res) => {
+        this.http.patch('/editItemMenu', item).subscribe((res) => {
               console.log(res);
         });
   }
 
   public addItem(item: any) {
-    this.http.post('http://localhost:3000/add-item', item).subscribe((res) => {
+    this.http.post('/add-item', item).subscribe((res) => {
       console.log(res);
     });
   }
 
   public getOrderDetails() {
-    return this.http.get('http://localhost:3000/order-details').pipe(
+    return this.http.get('/order-details').pipe(
       map(responseData => {
         this.allOrders = [];
         console.log(responseData);
@@ -78,8 +78,7 @@ public getOrder() {
   }
 
   public getOrderDetail(id: number) {
-    console.log('hiiiiiii!!!!!!!!!!!!!!!');
-    return this.http.get('http://localhost:3000/order-details/' + id).pipe(
+    return this.http.get('/order-details/' + id).pipe(
       map(responseData => {
         this.order = [];
         console.log(responseData);
@@ -95,7 +94,7 @@ public getOrder() {
   }
 
   public getToppingOrderDb(id: number) {
-    return this.http.get('http://localhost:3000/order-topping/' + id).pipe(
+    return this.http.get('/order-topping/' + id).pipe(
       map(responseData => {
         this.topping = [];
         console.log(responseData);
@@ -112,13 +111,13 @@ public getOrder() {
 
 updateStatus(uStatus: string , uNumOrder: number) {
   const updateStatus = {status: uStatus, numOrder: uNumOrder };
-  this.http.patch('http://localhost:3000/update-status', updateStatus).subscribe(res => {
+  this.http.patch('/update-status', updateStatus).subscribe(res => {
     console.log(res);
   });
 }
 
 searchNumOrder(num: number) {
-  return this.http.get('http://localhost:3000/searchNumOrder/' + num ).pipe(
+  return this.http.get('/searchNumOrder/' + num ).pipe(
     map(responseData => {
       this.numBySearchOrder = [];
       console.log(responseData);
@@ -165,7 +164,7 @@ getCustomDate(date: string) {
 }
 
 filterOrderDataByStatus(status: string, fromDate: string, toDate: string) {
-  return this.http.get('http://localhost:3000/filterOrderDataByStatus/' + status + '?fromDate=' + fromDate + '&toDate=' + toDate).pipe(
+  return this.http.get('/filterOrderDataByStatus/' + status + '?fromDate=' + fromDate + '&toDate=' + toDate).pipe(
     map(responseData => {
       this.numBySearchOrder = [];
       console.log(responseData);
@@ -181,7 +180,7 @@ filterOrderDataByStatus(status: string, fromDate: string, toDate: string) {
 }
 
 filterOrderDataByType(type: string, fromDate: string, toDate: string) {
-  return this.http.get('http://localhost:3000/filterOrderDataByType/' + type + '?fromDate=' + fromDate + '&toDate=' + toDate).pipe(
+  return this.http.get('/filterOrderDataByType/' + type + '?fromDate=' + fromDate + '&toDate=' + toDate).pipe(
     map(responseData => {
       this.numBySearchOrder = [];
       console.log(responseData);
@@ -196,7 +195,7 @@ filterOrderDataByType(type: string, fromDate: string, toDate: string) {
   );
 }
 filterOrderData(status: string, type: string, fromDate: string, toDate: string) {
-  return this.http.get('http://localhost:3000/filterOrderData/' + status + '?fromDate=' + fromDate + '&toDate=' + toDate +
+  return this.http.get('/filterOrderData/' + status + '?fromDate=' + fromDate + '&toDate=' + toDate +
                      '&type=' + type).pipe(
     map(responseData => {
       this.numBySearchOrder = [];

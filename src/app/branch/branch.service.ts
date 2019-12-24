@@ -30,7 +30,7 @@ export class BranchService {
   }
 
     public getStoreDb() {
-     return this.http.get('http://localhost:3000/branch').pipe(
+     return this.http.get('/branch').pipe(
         map(responseData => {
           this.stores = [];
           console.log(responseData);
