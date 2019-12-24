@@ -9,8 +9,8 @@
     "build": "ng build",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev": "env-cmd -f ./src/config/dev.env nodemon src/server/app.js",
-    "heroku-postbuild": "ng build --prod"
+    "dev": "env-cmd -f ./src/config/dev.env nodemon src/server/app.js"
+
   },
   "private": true,
   "dependencies": {
