@@ -1,0 +1,12 @@
+
+
+<ul class="list-group xl">
+
+  <li  style="text-align: left; width:49%; display: inline-block;"><a style="cursor: pointer; margin-right: 3px;" (click)="heppend()" >x</a>
+    <a *ngIf="try.topping.length > 0"> <img src="assets/img/edit.png" width="12px" height="12px" style="cursor: pointer; margin-right: 3px;" (click)="editOrder()" ></a>{{try.name}}</li>
+  <li  style="text-align: right; width:49%; display: inline-block">{{try.price}}$</li>
+  <ul *ngFor="let topping of try.topping">
+    <li style="text-align: left; width:49%; display: inline-block;">{{topping.name}}</li>
+    <li style="text-align: right; width:49%; display: inline-block;">{{topping.price}}$</li>
+  </ul>
+</ul>

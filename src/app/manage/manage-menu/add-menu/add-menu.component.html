@@ -1,0 +1,77 @@
+<a routerLink="manage/menu/add-item"></a>
+
+<form (ngSubmit)="onAddItem(f)" #f=ngForm>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Name</label>
+        <input type="text"
+               [(ngModel)]="item.m_name"
+               class="form-control"
+               name="name"
+               id="inputEmail4"
+
+               #name="ngModel"
+               placeholder="Name">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputdescription">Description</label>
+        <input type="text"
+               class="form-control"
+               [(ngModel)]="item.m_description"
+               name="description"
+               id="inputdescription"
+               #description="ngModel"
+               placeholder="Description">
+      </div>
+    </div>
+    <div class="form-row">
+          <div class="form-group col-md-4">
+              <label for="inputCategory">Category</label>
+              <select id="inputCategory" class="form-control" [(ngModel)]="item.category" name="category">
+                <option disabled selected="selected"  >Choose...</option>
+                <option *ngFor="let cat of category">{{cat}}</option>
+              </select>
+            </div>
+          <div class="form-group col-md-4">
+            <label for="inputAddress2">Price</label>
+            <input type="number"
+                   class="form-control"
+                   [(ngModel)]="item.price"
+                   name="price"
+                   id="inputAddress2"
+                   placeholder="Price"
+
+                   #price="ngModel">
+          </div>
+
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="exampleInputFile">Front Image</label>
+            <input type="file"
+                   id="exampleInputFile"
+                   [(ngModel)]="fileFrontImage"
+                   name="fileFront"
+                   #fileFront="ngModel">
+          </div>
+          <div class="form-group col-md-6">
+              <label for="exampleInputFile">Back Image</label>
+              <input type="file"
+                     id="exampleInputFile"
+                     [(ngModel)]="fileBackImage"
+                     name="fileBack"
+                   >
+            </div>
+
+   </div>
+   <div class="form-group col-md-11">
+      <button type="button" class="btn btn-danger" style=" width: 10%;display: block; margin-left: auto;" (click)="backTable()">Back</button>
+
+
+   </div>
+   <div class="form-group col-md-1">
+      <button type="submit" class="btn btn-primary" style="width: 150%; display: block;
+      margin-left: auto;">Add</button>
+   </div>
+  </form>

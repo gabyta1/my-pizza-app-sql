@@ -1,0 +1,45 @@
+<div class="col-md-5" *ngIf="(id === menu.category) && (id !== 'beverages')" style="padding-top: 30px;
+                      padding-left: 15px">
+      <div class="flip-box"   >
+        <div class="flip-box-inner" >
+          <div class="flip-box-front ">
+            <!-- <h2>Pizza</h2>-->
+
+            <img src={{menu.imagePathFront}} width="400" height="300">
+            <div class="centered">{{menu.m_name}}</div>
+
+          </div>
+
+
+          <div class="flip-box-back ">
+            <img src={{menu.imagePathBack}} width="400" height="300">
+            <p class="font-header-pizza " >{{menu.m_name}}</p>
+            <button class="btn btn-danger"
+                    style="position: absolute; top: 130px; left:175px"
+                      (click)="onOrder()">Order</button>
+            <p class="font-pizza">{{menu.m_description}} </p>
+            <p class="price" >{{menu.price}}$</p>
+
+
+          </div>
+
+        </div>
+      </div>
+      </div>
+
+<div class="col-md-3 texts"  *ngIf="(id === menu.category) && (id === 'beverages')"
+     style="display:inline-block;
+    line-height: 1.1;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 50px;">
+   <a (click)="onSelectDrink()"><img src={{menu.imagePathFront}}
+width="120px" height="140px"> </a>
+  <p class="texts-size"> {{menu.m_name}}</p>
+  <p class="texts-size"> {{menu.price}}$</p>
+</div>
+
+
+
+

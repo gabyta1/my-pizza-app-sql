@@ -1,0 +1,99 @@
+<div class="row">
+    <div class="col-md-12">
+      <form (ngSubmit)="onPay(f)" #f=ngForm>
+          <div class="row">
+              <div class="form-group col-md-5" >
+                <label for="type">Choose Card:</label>
+                <select class="form-control" id="type" name="typeCard" required [(ngModel)]="typeCard">
+                  <option disabled selected="selected">Choose Option</option>
+                  <option>Visa</option>
+                  <option>MasterCard</option>
+                  <option>American Express</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 form-group">
+                  <label for="num">Card Number</label>
+                  <input
+                    type="number"
+                    id="num"
+                    class="form-control"
+                    name="num"
+                    ngModel
+                    required
+                    pattern="^[1-9]+[0-9]*$"
+                    #num = ngModel
+                    placeholder="Card Number"
+                  >
+                  <span class="help-block" *ngIf="!num.valid && num.touched">Please enter a valid number card</span>
+                </div>
+                  </div>
+    <div class="row">
+      <div class="col-md-5">
+      <label for="id">ID</label>
+        <input type="number"
+               id="id"
+               class="form-control"
+               name="id"
+               ngModel
+               required
+               pattern="^[1-9]+[0-9]*$"
+               maxlength="9"
+              #id=ngModel
+              placeholder="ID">
+        <span class="help-block" *ngIf="!id.valid && id.touched">Please enter a valid id</span>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 15px; margin-bottom: 15px">
+        <div class="col-md-4">
+            <label for="date">Card Expiry:</label>
+            <span class="expiration">
+                <input id="date" type="text" name="month" placeholder="MM" maxlength="2" size="2" />
+                <span>/</span>
+                <input id="date" type="text" name="year" placeholder="YY" maxlength="2" size="2" />
+            </span>
+          </div>
+          </div>
+          <div class="row">
+              <div class="col-md-5 form-group">
+                <label for="tel">Phone Nunber</label>
+                <input
+                  type="number"
+                  id="tel"
+                  class="form-control"
+                  name="tel"
+                  ngModel
+                  required
+                  pattern="^[1-9]+[0-9]*$"
+                  #tel = ngModel
+                  placeholder="Phone"
+                >
+                <span class="help-block" *ngIf="!tel.valid && tel.touched">Please enter a valid number</span>
+              </div>
+                </div>
+
+
+        <div class="row">
+          <div class="col-md-5 form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              name="email"
+              ngModel
+              required
+              email
+              #email="ngModel"
+              placeholder="Email">
+            <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email</span>
+          </div>
+        </div>
+
+
+
+        <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit Order</button>
+      </form>
+   </div>
+  </div>

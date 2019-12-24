@@ -1,0 +1,47 @@
+
+
+
+.box{
+  border-top: 1px #474747 solid;
+  padding-top: 20px;
+  width: 47%;
+  margin-left:20%;
+  margin-top: 20px;
+}
+
+h2{
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-left: 38%;
+  vertical-align: middle;
+  line-height: 30px;
+  right: 80%;
+  font-family: "Forte";
+}
+
+.name{
+  margin-top: 10px;
+  font-size: 20px;
+  font-family:"Kristen ITC";
+}
+
+
+.price{
+  text-align: center;
+  display: inline-block;
+  width: 10%;
+  margin-top: 10px;
+  margin-left: 25%;
+  border-radius: 50%;
+  font-size: 20px;
+  background-color: #b8c6db;
+  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+  font-family: "Kristen ITC";
+}
+
+.total{
+  font-size: 30px;
+  font-family: "Forte";
+}

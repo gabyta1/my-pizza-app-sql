@@ -1,0 +1,40 @@
+
+<router-outlet></router-outlet>
+
+
+
+
+
+<div class="shadow-bottom box-s"   *ngIf="true">
+  <span class="myOrderTitle"  >My Order</span>
+<app-lists *ngFor="let cart of orderService.getCart();let i = index"
+            [try]="cart"
+            [index]="i"></app-lists>
+
+
+  <label style="text-align: left; width:40%; display: inline-block; margin-top:20px;
+                  font-size: 30px">Total</label>
+  <label style="text-align: right; width:40%; display: inline-block; margin-top:20px;
+                  font-size: 30px">{{orderService.getPrice()}}$</label>
+  <button class="btn btn-primary" style="font-size:20px; margin-top:30px" (click)="addItems()">Add Items</button>
+  <button class="btn btn-danger"
+          style="float: right;
+                 width: 100%;
+                 margin-top: 20px;
+                 margin-left: 10px;
+                 font-size: 28px;"
+                 (click)="continue()"
+  >Continue</button>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+

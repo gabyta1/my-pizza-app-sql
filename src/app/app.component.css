@@ -1,0 +1,42 @@
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  background: #fff0dc;
+}
+
+.tag-wrap {
+
+  filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+}
+
+
+
+.tag {
+  position: absolute;
+  left: 30em;
+  background: yellow;
+  color: blue;
+  font: bold 32px system-ui;
+  padding: 2rem 3rem 2rem 4rem;
+  clip-path: polygon(30px 0%, 100% 0%, 100% 100%, 30px 100%, 0 50%);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+<a routerLink="order/pick"></a>
+<div class="box" (click)="onSelfChoice()" *ngIf="(selfChoice && deliChoice)">
+  <p>Self-Pickup</p>
+
+</div>
+
+<div class="box" (click)="onDeliveryChoice()" *ngIf="(deliChoice && selfChoice)">
+  <p>Delivery</p>
+</div>
+
+<app-timepicker *ngIf="orderService.getTimeBox()"></app-timepicker>
+
+<div class="row choiceBoxDelivery" *ngIf="(!deliChoice && deliveryChoice && !orderService.getTimeBox())">
+  <div class="row" style="position: relative; left: 15px;">
+    <div class="form-group col-md-7">
+      <label for="city">Select City:</label>
+      <select class="form-control" id="city" name="city" required [(ngModel)]="cityName" >
+        <option value="" disabled selected="selected">Choose Option</option>
+        <option *ngFor="let store of storeService.getStore()">{{store.city}}</option>
+      </select>
+    </div>
+  </div>
+  <form (ngSubmit)="onAddItem(f)" #f=ngForm>
+  <div class="row" style=" position: relative; left: 15px; padding-bottom: 5px">
+    <div class="col-md-7">
+      <label for="street">Street</label>
+      <input type="text" id="street" class="form-control" name="street" required ngModel>
+    </div>
+  </div>
+  <div class="row" style="position:relative; left:15px; padding-bottom: 5px">
+    <div class="col-md-7">
+      <label for="homenum">Home Number</label>
+      <input type="number" id="homenum" class="form-control" name="homenum" required ngModel >
+    </div>
+  </div>
+
+  <button class="btn btn-primary" type="submit" style="position: absolute; right: 220px; width: 60px; bottom: 5px" >OK</button>
+</form>
+</div>
+
+
+
+<div class="row choiceBoxStore" *ngIf="(!selfChoice && selfPickChoice && !orderService.getTimeBox())">
+  <div class="col-md-12">
+    <label for="job">Select Store:</label>
+    <select class="form-control" id="job" name="job" required [(ngModel)]="cityName">
+      <option value="" disabled selected="selected">Choose Option</option>
+      <option *ngFor="let store of storeService.getStore()">{{store.city}}</option>
+    </select>
+    <button class="btn btn-primary" style="position: absolute; right: 220px; width: 60px " (click)="onChoiceSelfPick()">OK</button>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
