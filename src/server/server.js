@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const db = require('../mysql/db')
 const bodyParser = require("body-parser")
-const mysql = require('mysql')
+
 
 const app = express()
 
@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 
 
 app.get('*', function(req, res) {
-  console.log("YES HERO")
+  console.log("YES HEROku")
   //res.sendFile(path.join(__dirname,'/dist/my-pizza-app/index.html'));
   res.sendFile( path.resolve('src/index.html') )
 
