@@ -1,10 +1,10 @@
 const mysql = require('mysql')
 
 const db = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'gabyta168',
-  database : 'pizza_appdb'
+  host     : 'us-cdbr-iron-east-05.cleardb.net',
+  user     : 'b164f918dfb74e',
+  password : 'a7cdfb38',
+  database : 'heroku_ae73573e7ae6edf'
 });
 
 db.connect((err) => {
