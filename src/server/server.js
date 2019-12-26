@@ -8,7 +8,7 @@ const app = express()
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join('./dist/my-pizza-app')))
+app.use(express.static(path.join('./dist/my-pizza-app-sql')))
 
 
 app.use((req, res, next) => {
@@ -27,9 +27,9 @@ app.use((req, res, next) => {
 
 app.get('*', function(req, res) {
   console.log("YES HEROku")
- // res.sendFile(path.join(__dirname,'/dist/my-pizza-app/index.html'));
+  res.sendFile(path.join(__dirname,'/dist/my-pizza-app-sql/index.html'));
  // res.sendFile( path.resolve('src/index.html') )
-  res.sendFile(`/src/index.html`)
+  //res.sendFile(`/src/index.html`)
 
 });
 
