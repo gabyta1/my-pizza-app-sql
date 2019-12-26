@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 
 
 app.get('*', function(req, res) {
-  console.log("YES HEROku")
+  console.log("YES HERO")
   //res.sendFile(path.join(__dirname,'/dist/my-pizza-app/index.html'));
   res.sendFile( path.resolve('src/index.html') )
 
