@@ -54,7 +54,7 @@ app.get('/createNewTable', (req,res) => {
 
 app.get('/insertItems', (req,res) => {
   let post = {firs_name: 'dani' , last_name:'Berman'}
-  let sql = 'INSERT INTO Users SET ?'
+  let sql = 'INSERT INTO users SET ?'
   db.query(sql,post, (err,result) => {
     if(err){
       throw err
@@ -80,7 +80,7 @@ app.get('/meals',  (req,res) =>{
 })
 
 app.post('/users',  (req, res) => {
-  let sql ='INSERT INTO Users SET ?'
+  let sql ='INSERT INTO users SET ?'
   console.log(req.body)
   db.query(sql,{user_id: req.body.user_id,email: req.body.email,phone: req.body.phone,
                 street: req.body.street, num_home: req.body.homeNumber}, (err,result) => {
@@ -93,7 +93,7 @@ app.post('/users',  (req, res) => {
 })
 
 app.post('/orders',  (req,res) => {
-  let sql = 'INSERT INTO Orders SET ?'
+  let sql = 'INSERT INTO orders SET ?'
   db.query(sql,{user_id: req.body.user_id,
     num_order: req.body.num_order,
     branch_id: req.body.branch,
