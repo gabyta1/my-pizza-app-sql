@@ -240,7 +240,7 @@ const findMenu_id = async (m_menu,req) =>{
 
 
 const insertOrderItemDb = (req,menu_id, orderItemId) => {
-  let insert = 'INSERT INTO Order_item SET ?'
+  let insert = 'INSERT INTO order_item SET ?'
   db.query(insert,{oi_id: orderItemId,
     order_num: req.body.order_num,
     m_id: menu_id,
