@@ -368,7 +368,7 @@ const insertPizzaOrderDb = (oi_id,pizza_id,topping_id) => {
              left join menu as mm
              on mm.menu_id = po.topping_id
              where oi.order_num = '${req.params.id}'
-             group by oi.oi_id`
+             group by m.m_name,oi.oi_id,oi.order_num,u.phone,m.category,mm.m_name`
 
 
   db.query(sql, (err,result) => {
