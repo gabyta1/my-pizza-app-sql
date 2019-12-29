@@ -30,7 +30,7 @@ export class BranchService {
   }
 
     public getStoreDb() {
-     return this.http.get('http://localhost:' + process.env.PORT + '/branch').pipe(
+     return this.http.get('/branch').pipe(
         map(responseData => {
           this.stores = [];
           console.log(responseData);
