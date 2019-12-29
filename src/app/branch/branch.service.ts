@@ -24,7 +24,7 @@ export class BranchService {
   public findCityId(city: string) {
     for (const x of this.stores) {
       if (city === x.city) {
-      return x.b_id;s
+      return x.b_id;
       }
     }
   }
