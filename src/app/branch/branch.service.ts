@@ -24,13 +24,13 @@ export class BranchService {
   public findCityId(city: string) {
     for (const x of this.stores) {
       if (city === x.city) {
-      return x.b_id;
+      return x.b_id;s
       }
     }
   }
 
     public getStoreDb() {
-     return this.http.get('/branch').pipe(
+     return this.http.get('http://localhost:' + process.env.PORT + '/branch').pipe(
         map(responseData => {
           this.stores = [];
           console.log(responseData);
