@@ -1,7 +1,7 @@
 .flip-box {
   background-color: transparent;
-  width: 400px;
-  height: 300px;
+  width: 300px;
+  height: 200px;
   perspective: 1000px;
 
 
@@ -48,10 +48,10 @@
 
 .centered {
   position: absolute;
-  bottom: 8px;
-  right: 16px;
+  bottom: 10px;
+  right: 20px;
   color: white;
-  font-size: 60px;
+  font-size: 40px;
   font-family: Cooper Black;
   text-shadow: 10px 2px black;
 
@@ -61,17 +61,17 @@
 
 .font-pizza {
   position: absolute;
-  top: 160px;
+  top: 130px;
   left: 16px;
-  font-size: 30px;
+  font-size: 15px;
   color: honeydew;
   text-shadow: 2px 2px black;
 }
   .font-header-pizza {
     position: absolute;
-    top: 80px;
-    left: 60px;
-    font-size: 30px;
+    top: 50px;
+    left: 33px;
+    font-size: 20px;
     color: black;
     font-family: Cooper Black;
     text-shadow: 2px 1px white;
@@ -80,11 +80,11 @@
 
   .price {
     position: absolute;
-    top: 25px;
-    right: 40px;
+    top: 20px;
+    right: 30px;
     font-family: Cooper Black;
     color: blue;
-    font-size: 40px;
+    font-size: 30px;
     text-shadow: 2px 1px black;
   }
 

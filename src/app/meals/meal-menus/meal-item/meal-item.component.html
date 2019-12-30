@@ -1,5 +1,5 @@
-<div class="col-md-5" *ngIf="(id === menu.category) && (id !== 'beverages')" style="padding-top: 30px;
-                      padding-left: 15px">
+<div class="col-md-4" *ngIf="(id === menu.category) && (id !== 'beverages')" style="padding-top: 30px;
+                      ">
       <div class="flip-box"   >
         <div class="flip-box-inner" >
           <div class="flip-box-front ">
@@ -15,7 +15,7 @@
             <img src={{menu.imagePathBack}} width="300" height="200">
             <p class="font-header-pizza " >{{menu.m_name}}</p>
             <button class="btn btn-danger"
-                    style="position: absolute; top: 130px; left:175px"
+                    style="position: absolute; top: 90px; left:120px"
                       (click)="onOrder()">Order</button>
             <p class="font-pizza">{{menu.m_description}} </p>
             <p class="price" >{{menu.price}}$</p>
