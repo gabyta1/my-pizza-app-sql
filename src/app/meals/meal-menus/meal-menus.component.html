@@ -1,21 +1,23 @@
 
   <div class="row" >
-<div class="col-md-12">
+
 <app-meal-item [appSelect] = control (onSelect)="control=$event"
                *ngFor="let menuEl of menu;let i = index "
                 [menu]="menuEl"
                 [index]="i">
 </app-meal-item>
 
+<div class="col-md-12 col-xs-12">
   <button class="btn btn-danger"
           style="width: 10%;
           position: relative;
           bottom: 10px;
-          right: -1000px;
+          left: 90%;
           margin-top: 20px;
           margin-bottom: 30px"
           *ngIf="id === 'beverages'" [disabled]="orderService.getButton()"  (click)="addToCart()">Add</button>
-  </div>
+        </div>
+
   </div>
 
 
