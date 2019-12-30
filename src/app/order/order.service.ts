@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 import {Topping} from '../topping.module';
 import {Cart} from '../shopping-cart.module';
 import {Subject} from 'rxjs';
+import {environment} from '../../environments/environment';
+
+const BACKEND_URL = environment.apiUrl;
 
 
 @Injectable()
@@ -208,7 +211,7 @@ public setdetailsDelivery(branchId: number, homenum: number, street: string ) {
 public createPost() {
   const post = {user_id: this.userId, email: this.emailUser, phone: this.phoneUser,
                 street: this.street, homeNumber: this.homeNumber};
-  this.http.post('/users', post).subscribe(responseData => {
+  this.http.post(BACKEND_URL + '/users', post).subscribe(responseData => {
     console.log(responseData);
   });
 }
@@ -228,7 +231,7 @@ public setOrderToDb() {
                        status: 'Process',
                        pick_time: this.getTimeOrder()
                         };
-  this.http.post('/orders', post).subscribe(responseData => {
+  this.http.post(BACKEND_URL + '/orders', post).subscribe(responseData => {
                           console.log(responseData);
                       });
                   }
@@ -236,7 +239,7 @@ public setOrderToDb() {
 
 
 public getNumOrder() {
-  this.http.get('/num_order').subscribe(numOrder => {
+  this.http.get(BACKEND_URL + '/num_order').subscribe(numOrder => {
    let x: any;
 
     for (x in numOrder) {
@@ -263,7 +266,7 @@ for ( const x of this.cart) {
       order_num: this.numOrder,
       name_id: x.name
     };
-  this.http.post('/ordersItem', post).subscribe(async (res) => {
+  this.http.post(BACKEND_URL + '/ordersItem', post).subscribe(async (res) => {
 
     orderItemId = await this.getOiId(res);
       // for (let x in res) {
@@ -277,7 +280,7 @@ for ( const x of this.cart) {
           name_id: x.name,
           topping_id: y.name
         };
-        this.http.post('/pizzaOrder', post).subscribe(resu => {
+        this.http.post(BACKEND_URL + '/pizzaOrder', post).subscribe(resu => {
           console.log(resu);
           });
       }

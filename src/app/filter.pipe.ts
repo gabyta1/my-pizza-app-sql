@@ -10,7 +10,7 @@ export class FilterPipe implements PipeTransform {
           return value;
     }
     const resultArray = [];
-    for(const item of value) {
+    for (const item of value) {
       if (item[prompName] === filterNumber) {
           resultArray.push(item);
       }

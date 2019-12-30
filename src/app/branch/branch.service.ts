@@ -2,8 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Stores} from '../stores.module';
 import { map } from 'rxjs/operators';
+import {environment} from '../../environments/environment';
 
-
+const BACKEND_URL = environment.apiUrl;
 @Injectable()
 export class BranchService {
  private stores: Stores[];
@@ -11,6 +12,8 @@ export class BranchService {
   //   new Stores('Herzliya', 'Sokolov', '13'),
   //   new Stores('Tel-Aviv', 'Dizengoff', '177')
   // ];
+
+
   constructor(private http: HttpClient) {}
 
   getStore() {
@@ -30,7 +33,7 @@ export class BranchService {
   }
 
     public getStoreDb() {
-     return this.http.get('/branch').pipe(
+       return this.http.get(BACKEND_URL  + '/branch').pipe(
         map(responseData => {
           this.stores = [];
           console.log(responseData);

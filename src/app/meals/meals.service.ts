@@ -4,7 +4,9 @@ import {Menu} from '../menu.module';
 import {Topping} from '../topping.module';
 import {map} from 'rxjs/operators';
 import { getSyntheticPropertyName } from '@angular/compiler/src/render3/util';
+import {environment} from '../../environments/environment';
 
+const BACKEND_URL = environment.apiUrl;
 @Injectable()
 export class MealsService {
   imagePathBack = 'assets/img/backImage.jpg';
@@ -100,7 +102,7 @@ export class MealsService {
 
 
   public getMeal() {
-  return  this.http.get('/meals')
+  return  this.http.get(BACKEND_URL + '/meals')
     .pipe(
       map(responseData => {
         this.menu = [];
