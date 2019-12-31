@@ -1,14 +1,24 @@
 <a routerLink="order/toppings"></a>
-<div class="col-md-6" *ngIf="!orderService.getOpenCloseElem()">
-<div class="row choiceBoxTopping" style="position: relative; top: 90px; padding-top: 10px ">
+<div class="container">
+<div class="row">
+
+<div class=" choiceBoxTopping" style=" top: 90px; padding-top: 10px; margin-bottom: 10px; ">
   <p style="padding-left: 10px">Please choose a Topping</p>
   <app-button *ngFor="let topping of toppings; let i = index"
               [topping]="topping"
               [index]="i"></app-button>
-  <button *ngIf="!orderService.getEditButton()" class="btn btn-primary" style=" position:absolute; bottom: 7px; right: 20px" (click)="onContinue()">Continue</button>
-  <button *ngIf="orderService.getEditButton()" class="btn btn-primary" style=" position:absolute; bottom: 7px; right: 20px" (click)="onEdit()">Edit</button>
-</div>
 
 </div>
+
+
+<div class="col-md-12 col-xs-12">
+  <button *ngIf="!orderService.getEditButton()" class="btn btn-primary" style="position: relative; left: 45%; margin-top: 40px;" (click)="onContinue()">Continue</button>
+  <button *ngIf="orderService.getEditButton()" class="btn btn-primary" style=" position: relative; left: 45%; margin-top: 40px;" (click)="onEdit()">Edit</button>
+</div>
+</div>
+</div>
+
+
+
 
 
