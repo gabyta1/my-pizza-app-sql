@@ -44,6 +44,7 @@ export class MealItemComponent implements OnInit {
     } else {
       if (this.id === 'pizza') {
         this.router.navigate(['order/toppings']);
+        this.orderService.setOpenCloseElem(false);
       } else {
         this.carts = new Cart(this.mealService.getOrderChooseName(), this.mealService.getOrderChoosePrice(),
           this.mealService.getTopping(), this.orderService.getCnt());

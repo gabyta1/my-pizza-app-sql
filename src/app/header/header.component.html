@@ -1,3 +1,4 @@
+<div class="col-md-12 col-xs-4 col-sm-12">
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -9,7 +10,7 @@
     <ul class="nav navbar-nav">
       <li routerLinkActive="active"><a href="#">Home</a></li>
       <li routerLinkActive="active"><a routerLink="/meals/pizza">Meals</a></li>
-      <li routerLinkActive="active" *ngIf="mealService.getOrder()"><a routerLink="/order">My Order</a></li>
+      <li routerLinkActive="active" *ngIf="mealService.getOrder()"><a routerLink="/order" (click)="myOrder()">My Order</a></li>
       <li routerLinkActive="active"><a routerLink="/stores">Stores</a></li>
       <li routerLinkActive="active"><a routerLink="/jobs">Jobs</a></li>
       <li class="dropdown" appDropdown>
@@ -25,4 +26,7 @@
     </div>
   </div>
 </nav>
+</div>
+
+
 

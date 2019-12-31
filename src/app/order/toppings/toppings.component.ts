@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {Topping} from '../../topping.module';
 import {OrderService} from '../order.service';
@@ -15,7 +16,7 @@ export class ToppingsComponent implements OnInit {
   top: Topping[];
   carts: Cart;
 
-  constructor(private orderService: OrderService, private mealService: MealsService) { }
+  constructor(private orderService: OrderService, private mealService: MealsService, private router: Router) { }
 
   ngOnInit() {
     this.toppings = this.orderService.getTopping();
@@ -31,10 +32,12 @@ export class ToppingsComponent implements OnInit {
     console.log(this.top);
     this.orderService.addPrice(this.top.length);
     this.mealService.resetTopping();
-    this.listorder = true;
+
     console.log(this.top);
 
     this.orderService.resetSelectedTopping();
+    this.router.navigate(['order']);
+    this.orderService.setOpenCloseElem(true);
 
   }
 
@@ -43,6 +46,7 @@ export class ToppingsComponent implements OnInit {
     this.mealService.resetTopping();
     this.orderService.resetSelectedTopping();
     this.orderService.setEditButton();
+    this.orderService.setOpenCloseElem(true);
   }
 
 }

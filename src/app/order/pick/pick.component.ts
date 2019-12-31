@@ -53,6 +53,7 @@ export class PickComponent implements OnInit {
       this.carts = new Cart(this.mealService.getOrderChooseName(), this.mealService.getOrderChoosePrice(),
         this.mealService.getTopping(), this.orderService.getCnt());
       this.orderService.addItemCart(this.carts);
+      this.orderService.setOpenCloseElem(true);
       this.router.navigate(['order']);
     }
   }
@@ -84,6 +85,7 @@ export class PickComponent implements OnInit {
       this.carts = new Cart(this.mealService.getOrderChooseName(), this.mealService.getOrderChoosePrice(),
         this.mealService.getTopping(), this.orderService.getCnt());
       this.orderService.addItemCart(this.carts);
+      this.orderService.setOpenCloseElem(true);
       this.router.navigate(['order']);
     }
   }

@@ -23,6 +23,7 @@ export class OrderService {
  ];
   private cart: Cart[] = [];
   cartChanged = new Subject<Cart[]>();
+  private openCloseElem = false;
   private price = 0;
   private button = true;
   private order = true;
@@ -48,6 +49,15 @@ public getOiId = (oiId => {
   });
 });
 
+
+public getOpenCloseElem() {
+  return this.openCloseElem;
+}
+
+public setOpenCloseElem(openClose: boolean) {
+  this.openCloseElem = openClose;
+  return this.openCloseElem;
+}
 
 public setTimeBox() {
   this.timeOrder = !this.timeOrder;

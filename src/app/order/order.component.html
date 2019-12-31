@@ -4,9 +4,9 @@
 
 
 
-
-<div class="shadow-bottom box-s"   *ngIf="true">
-  <span class="myOrderTitle"  >My Order</span>
+<div class="col-md-6 col-xs-6">
+<div class="shadow-bottom box-s"   *ngIf="orderService.getOpenCloseElem()">
+  <span class="myOrderTitle">My Order</span>
 <app-lists *ngFor="let cart of orderService.getCart();let i = index"
             [try]="cart"
             [index]="i"></app-lists>
@@ -27,7 +27,7 @@
   >Continue</button>
 
 </div>
-
+</div>
 
 
 

@@ -28,7 +28,8 @@ try: Cart;
   addItems() {
     this.router.navigate(['/meals/beverages']);
   }
-  continue(){
+  continue() {
+    this.orderService.setOpenCloseElem(false);
     this.router.navigate(['order/summary']);
   }
 

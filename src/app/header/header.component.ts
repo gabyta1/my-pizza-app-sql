@@ -1,3 +1,4 @@
+import { OrderService } from './../order/order.service';
 import { Component, OnInit } from '@angular/core';
 import {MealsService} from '../meals/meals.service';
 
@@ -8,9 +9,13 @@ import {MealsService} from '../meals/meals.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public mealService: MealsService) { }
+  constructor(public mealService: MealsService, private orderService: OrderService) { }
 
   ngOnInit() {
+  }
+
+  myOrder() {
+    this.orderService.setOpenCloseElem(true);
   }
 
 }

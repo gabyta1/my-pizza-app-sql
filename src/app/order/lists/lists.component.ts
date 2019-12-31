@@ -28,6 +28,7 @@ export class ListsComponent implements OnInit {
     this.orderService.DeleteItemCart(this.index);
   }
   editOrder() {
+    this.orderService.setOpenCloseElem(false);
     const tops = this.orderService.getEditOrderTopping(this.index);
     this.toppings = this.orderService.getTopping().map(topping => {
       const isSelected = tops.some(top => top.name === topping.name);
