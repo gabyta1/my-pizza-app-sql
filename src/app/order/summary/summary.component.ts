@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class SummaryComponent implements OnInit {
   x = [{ say: 'hello', price: 1, name: ['gaby', 'nurit'] }, {say: 'bii', price: 0, name: ['agam', 'avner']}];
   cart: Cart[];
-  constructor(private orderService: OrderService,private router: Router) { }
+  constructor(public orderService: OrderService, private router: Router) { }
 
   ngOnInit() {
     this.cart = this.orderService.getCart();

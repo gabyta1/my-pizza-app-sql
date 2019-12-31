@@ -355,8 +355,7 @@ const insertPizzaOrderDb = (oi_id,pizza_id,topping_id) => {
  })
 
  app.get('/order-details/:id',(req,res) => {
-  console.log('hiiiiiii!!!!!!!!!!!!!!!');
-  let sql = `select m.m_name,oi.oi_id,oi.order_num,u.phone,m.category,mm.m_name as topping from menu as m
+  let sql = `select m.m_name,oi.oi_id,oi.order_num,u.phone,m.category from menu as m
              inner join order_item as oi
              on m.menu_id=oi.m_id
              inner join orders as o
@@ -365,10 +364,8 @@ const insertPizzaOrderDb = (oi_id,pizza_id,topping_id) => {
              on u.user_id = o.user_id
              left join pizza_order as po
              on po.oi_id = oi.oi_id
-             left join menu as mm
-             on mm.menu_id = po.topping_id
              where oi.order_num = '${req.params.id}'
-             group by m.m_name,oi.oi_id,oi.order_num,u.phone,m.category,mm.m_name`
+             group by m.m_name,oi.oi_id,oi.order_num,u.phone,m.category`
 
 
   db.query(sql, (err,result) => {

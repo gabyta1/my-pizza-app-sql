@@ -1,7 +1,7 @@
 
 <form style=" position: absolute;
 top: 140px;
-left: 350px;
+left: 200px;
 width: 250px;
 height: 150px;
 border-radius:30px;
@@ -11,8 +11,9 @@ border-radius:30px;
     <label for="inputState" style="padding-left: 75px; vertical-align: middle;">Supply Time</label>
 </div>
     <div class="form-row">
-<div class="form-group col-md-1">
-    
+      <div class="col-md-1 col-xs-1">
+<div class="form-group">
+
     <select  class="form-control" name="hour"  [(ngModel)]="myHour" style="width:75px; height: 75px; font-size: 20px; font-family: Kristen ITC;background-color: #f39f86;
     background-image: linear-gradient(315deg, #f39f86 0%, #f9d976 74%); border-radius:50px; margin-left:25px;">
         <ng-container *ngFor="let h of hour">
@@ -21,17 +22,21 @@ border-radius:30px;
         </select>
   </div>
 </div>
-<div class="form-group col-md-1">
-    
+</div>
+
+<div class="col-md-1 col-xs-1">
+<div class="form-group">
+
     <select  class="form-control" name="minute" [(ngModel)]="Myminute" style="width:75px; height: 75px; font-size: 20px; font-family: Kristen ITC;background-color: #f39f86;
     background-image: linear-gradient(315deg, #f39f86 0%, #f9d976 74%); border-radius:50px;margin-left:75px;">
         <ng-container *ngFor="let m of minute">
             <option size="2">{{m}}</option>
         </ng-container>
         </select>
-        
+
   </div>
-  <div class="row col-md-12">
+</div>
+  <div class="row col-md-12 col-xs-12">
       <button class="btn btn-primary" (click)="selectTime()" style="margin-left: 95px;margin-top:-5px;" >OK</button>
   </div>
 

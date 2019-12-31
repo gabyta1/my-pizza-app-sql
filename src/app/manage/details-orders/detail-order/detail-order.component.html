@@ -1,18 +1,18 @@
 <a routerLink="manage/details-orders/:id"></a>
 
   <form>
-      <div class="col-sm-12">
+      <div class="col-sm-12 col-xs-12">
           <span class="glyphicon glyphicon-remove" style="margin-left:70%; cursor: pointer;"  (click)="backDetails()"></span>
           </div>
       <div>
         <h2 class="title">Details Of Number Order {{numOrder}}</h2>
       </div>
-      <div class="col-sm-12 box" *ngFor="let item of order">
+      <div class="col-sm-12 col-xs-12 box" *ngFor="let item of order">
       <ul class="list-group">
-        <li class="col-sm-6 name" style="text-align: left; width:49%; display: inline-block;">{{item.m_name}}</li>
+        <li class="col-sm-6 col-xs-6 name" style="text-align: left; width:49%; display: inline-block;">{{item.m_name}}</li>
 
         <ul  class="list-group" *ngFor="let topping of topping">
-            <div class="col-sm-6 nameTopping " *ngIf="item.oi_id === topping.oi_id">{{topping.topping}}</div>
+            <div class="col-sm-6 col-xs-6 nameTopping " *ngIf="item.oi_id === topping.oi_id">{{topping.topping}}</div>
 
           </ul>
       </ul>
@@ -20,7 +20,7 @@
       </div>
       </form>
       <div style="display: inline-block; border-top: 3px solid black; margin-top:20px; width:47%; margin-left:20%">
-      <p class="col-sm-6 total">Customer Phone: </p>
-      <p class="col-sm-6 total" style="padding-left:20%">{{order[0].phone}}</p>
+      <p class="col-sm-6 col-xs-6 total">Customer Phone: </p>
+      <p class="col-sm-6 col-xs-6 total" style="padding-left:20%">{{order[0].phone}}</p>
 
       </div>
