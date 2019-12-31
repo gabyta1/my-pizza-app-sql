@@ -22,6 +22,7 @@ h2{
 }
 
 .name{
+  position: relative;
   margin-top: 10px;
   font-size: 20px;
   font-family:"Kristen ITC";
@@ -29,6 +30,7 @@ h2{
 
 
 .price{
+  position: relative;
   text-align: center;
   display: inline-block;
   width: 10%;
