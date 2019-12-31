@@ -7,10 +7,12 @@
 <ul class="list-group">
   <li class="col-sm-6 col-xs-6 col-md-6 name" style="text-align: left; width:49%; display: inline-block;">{{cart[i].name}}</li>
   <div class="col-sm-6 col-xs-6 col-md-6 price" >{{cart[i].price}}</div>
-  <ul *ngFor="let exm of try.topping" class="list-group">
-      <div class="col-sm-6 col-xs-6 col-md-6 name">{{exm.name}}</div>
+  <div class="list-group">
+  <ul *ngFor="let exm of try.topping" >
+      <div class="col-sm-6 col-xs-6 col-md-6 name" style="text-align: left;">{{exm.name}}</div>
       <div class="col-sm-6 col-xs-6 col-md-6 price">{{exm.price}}</div>
     </ul>
+  </div>
 </ul>
 
 </div>
