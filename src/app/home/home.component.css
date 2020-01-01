@@ -12,10 +12,10 @@
 @media screen and (max-width: 600px) {
   .centered {
     position: relative;
-    bottom: 150px;
-    left: 100px;
+    bottom: 4.8em;
+    left: 3.2em;
     color: white;
-    font-size: 30px;
+    font-size: 2.1em;
     font-family: Cooper Black;
     text-shadow: 10px 2px black;
   }
