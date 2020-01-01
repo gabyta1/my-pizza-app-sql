@@ -9,7 +9,17 @@
 
 }
 
-
+@media screen and (max-width: 600px) {
+  .centered {
+    position: relative;
+    bottom: 150px;
+    left: 100px;
+    color: white;
+    font-size: 30px;
+    font-family: Cooper Black;
+    text-shadow: 10px 2px black;
+  }
+}
 
 
 .img-big{
@@ -27,40 +37,15 @@ button{
   font-family: Cooper;
 }
 
-@media screen
-  and (device-width: 360px)
-  and (device-height: 640px)
-  and (-webkit-device-pixel-ratio: 4)
-  and (orientation: portrait) {
 
-    .centered {
-      position: relative;
-      bottom: 150px;
-      left: 100px;
-      color: white;
-      font-size: 30px;
-      font-family: Cooper Black;
-      text-shadow: 10px 2px black;
-    }
-
-}
-
-
-
-@media screen
-  and (device-width: 360px)
-  and (device-height: 640px)
-  and (-webkit-device-pixel-ratio: 4)
-  and (orientation: portrait) {
-
-    button{
-      position: relative;
-      bottom: 140px;
-      left: 200px;
-      width: 70px;
-      height: 30px;
-      font-size: 8px;
-      font-family: Cooper;
-    }
-
+@media screen and (max-width: 600px) {
+  button{
+    position: relative;
+    bottom: 17em;
+    left: 24em;
+    width: 9em;
+    height: 3em;
+    font-size: 0.6em;
+    font-family: Cooper;
+  }
 }
