@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { DetailsOrdersComponent } from './manage/details-orders/details-orders.component';
 import { AddMenuComponent } from './manage/manage-menu/add-menu/add-menu.component';
 import { EditMenuComponent } from './manage/manage-menu/edit-menu/edit-menu.component';
@@ -21,7 +22,8 @@ import { DetailOrderComponent } from './manage/details-orders/detail-order/detai
 
 
 const appRouts: Routes = [
-  {path: '', redirectTo: '/meals', pathMatch: 'full'},
+  {path: '' , redirectTo: '/home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   {path: 'meals', component: MealsComponent, children: [
       {path: ':id', component: MealMenusComponent},
 

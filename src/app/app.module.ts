@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { DetailsOrdersComponent } from './manage/details-orders/details-orders.component';
 import { AddMenuComponent } from './manage/manage-menu/add-menu/add-menu.component';
 
@@ -58,6 +59,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,7 +93,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     AddMenuComponent,
     DetailsOrdersComponent,
     DetailOrderComponent,
-    FilterPipe
+    FilterPipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
