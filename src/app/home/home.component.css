@@ -50,5 +50,18 @@ button{
     height: 3em;
     font-size: 0.6em;
     font-family: Cooper;
+    white-space: normal;
+  }
+}
+
+@media screen and (max-width: 600px)  {
+  .dbutton{
+    position: relative;
+    bottom: 17em;
+    left: 24em;
+    width: 9em;
+    height: 3em;
+    font-size: 0.6em;
+    font-family: Cooper;
   }
 }
