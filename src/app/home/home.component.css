@@ -41,7 +41,7 @@ button{
 
 
 
-@media screen and (max-width: 600px)  and (orientation:landscape) {
+@media screen and (max-width: 600px)  and (orientation:portrait) {
   button{
     position: relative;
     bottom: 17em;
