@@ -38,24 +38,11 @@ button{
 }
 
 
-@media screen and (max-width: 600px) {
+
+
+
+@media screen and (max-width: 600px)  and (orientation:landscape) {
   button{
-    position: relative;
-    bottom: 10em;
-    left: 20em;
-    width: 6em;
-    height: 2em;
-    font-size: 0.3em;
-    font-family: Cooper;
-  }
-}
-
-
-
-
-
-@media screen and (max-width: 600px) {
-  .dbutton{
     position: relative;
     bottom: 17em;
     left: 24em;
