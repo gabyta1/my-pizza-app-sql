@@ -43,8 +43,7 @@ button{
 
 @media screen and (max-width: 600px)  {
   button{
-    white-space: normal;
-    word-wrap: break-word;
+    white-space: nowrap;
     position: relative;
     bottom: 17em;
     left: 24em;
