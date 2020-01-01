@@ -1,12 +1,21 @@
 <div class="col-md-12 col-sm-12">
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header">
+    <div class="navbar-header" >
+      <button type="button"
+      class="navbar-toggle"
+      (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic" >
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <img src="assets/img/logo.jpg"
            height='50' width='100'  align="left">
-
     </div>
-    <div class="navbar-center" >
+
+    <div [collapse]="isCollapsed" class="collapse navbar-collapse open" id="navCollapse" >
+
     <ul class="nav navbar-nav">
       <li routerLinkActive="active"><a href="#">Home</a></li>
       <li routerLinkActive="active"><a routerLink="/meals/pizza">Meals</a></li>
@@ -24,9 +33,14 @@
         </li>
     </ul>
     </div>
-  </div>
+    </div>
+
 </nav>
 </div>
+
+
+
+
 
 
 

@@ -8,7 +8,7 @@ import {MealsService} from '../meals/meals.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  isCollapsed = true;
   constructor(public mealService: MealsService, private orderService: OrderService) { }
 
   ngOnInit() {
@@ -17,5 +17,6 @@ export class HeaderComponent implements OnInit {
   myOrder() {
     this.orderService.setOpenCloseElem(true);
   }
+
 
 }

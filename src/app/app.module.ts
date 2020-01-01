@@ -43,6 +43,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule, MatNativeDateModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+
+
+
 
 
 
@@ -97,7 +102,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatDatepickerModule,
     MatInputModule,
     MatNativeDateModule,
-    MatButtonModule
+    MatButtonModule,
+    TooltipModule.forRoot(),
+    CollapseModule.forRoot()
   ],
   providers: [BranchService, MealsService, OrderService ],
   bootstrap: [AppComponent]
