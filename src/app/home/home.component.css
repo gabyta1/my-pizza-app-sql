@@ -9,7 +9,7 @@
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .centered {
     position: relative;
     bottom: 150px;
@@ -38,7 +38,7 @@ button{
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   button{
     position: relative;
     bottom: 140px;
