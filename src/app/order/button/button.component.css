@@ -5,3 +5,14 @@
 .blue {
   background: blue;
 }
+
+
+
+@media screen and (max-width: 600px)  {
+  .butn {
+    width: 100%;
+    min-width: 50px;  
+    max-width: 100px;
+  
+  }
+}

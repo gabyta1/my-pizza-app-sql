@@ -7,3 +7,12 @@
   border: 0px black;
   border-radius: 30px
 }
+
+
+@media screen and (max-width: 600px)  {
+  .butn {
+    position: relative;
+     left: 16.5em;
+  
+  }
+}
