@@ -1,6 +1,10 @@
 .choiceBoxTopping {
   position: relative;
   top: 140px;
+  top: 90px; 
+  left:150px;
+   padding-top:10px; 
+   margin-bottom: 10px;
   width: 450px;
   border: 0px black;
   border-radius: 30px
@@ -11,7 +15,8 @@
   .choiceBoxTopping {
     position: relative;
     top: 90px;
-    left:20px;
+    width: 200px;
+    left: 5em;
     padding-top: 10px;
     margin-bottom: 10px;
   
@@ -21,8 +26,8 @@
 @media screen and (max-width: 600px)  {
   .butn {
     position: relative; 
-    right: 100px;
+    left: -3em;
     top: 60px;
-  
+   
   }
 }

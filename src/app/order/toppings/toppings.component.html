@@ -2,7 +2,7 @@
 <div class="container">
 <div class="row">
 
-<div class=" choiceBoxTopping" style=" top: 90px; left:150px; padding-top: 10px; margin-bottom: 10px; ">
+<div class=" choiceBoxTopping" >
   <p style="padding-left: 10px">Please choose a Topping</p>
   <app-button *ngFor="let topping of toppings; let i = index"
               [topping]="topping"
@@ -13,7 +13,7 @@
 
 <div class="col-md-12 col-xs-5 butn">
   <button *ngIf="!orderService.getEditButton()" class="btn btn-primary " style="position: relative; left: 45%; top: 100px;" (click)="onContinue()">Continue</button>
-  <button *ngIf="orderService.getEditButton()" class="btn btn-primary " style=" position: relative; left: 45%; margin-top: 40px;" (click)="onEdit()">Edit</button>
+  <button *ngIf="orderService.getEditButton()" class="btn btn-primary " style=" position: relative; left: 45%; top: 100px;" (click)="onEdit()">Edit</button>
 </div>
 </div>
 </div>
