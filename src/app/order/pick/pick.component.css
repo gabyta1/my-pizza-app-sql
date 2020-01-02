@@ -70,7 +70,7 @@
     position: absolute;
     top: 140px;
     left: 35px;
-    width: 300px;
+    width: 270px;
     height: 250px;
     border: solid black;
     border-radius: 30px
@@ -80,7 +80,7 @@
 @media screen and (max-width: 600px)  {
   .btnDelivery {
     position: absolute;
-    left: 325px;
+    left: 315px;
     width: 60px; 
     bottom: 5px
 
@@ -93,7 +93,7 @@
     position: absolute;
     top: 140px;
     left: 35px;
-    width: 300px;
+    width: 270px;
     height: 120px;
     border: solid black;
     border-radius: 30px
@@ -104,7 +104,7 @@
 @media screen and (max-width: 600px)  {
   .btnselfpick {
     position: absolute;
-    left: 340px;
+    left: 315px;
     width: 55px; 
     top: 70px
 
