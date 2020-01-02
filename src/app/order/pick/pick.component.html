@@ -51,8 +51,10 @@
       <option value="" disabled selected="selected">Choose Option</option>
       <option *ngFor="let store of storeService.getStore()">{{store.city}}</option>
     </select>
+    <div class="btnselfpick">
     <button class="btn btn-primary" style="position: absolute; right: 220px; width: 60px " (click)="onChoiceSelfPick()">OK</button>
   </div>
+</div>
 
 </div>
 

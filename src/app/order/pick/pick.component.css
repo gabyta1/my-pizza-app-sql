@@ -86,3 +86,29 @@
 
   }
 }
+
+
+@media screen and (max-width: 600px)  {
+  .choiceBoxStore {
+    position: absolute;
+    top: 140px;
+    left: 100px;
+    width: 300px;
+    height: 120px;
+    border: solid black;
+    border-radius: 30px
+
+  }
+}
+
+@media screen and (max-width: 600px)  {
+  .btnselfpick {
+    position: absolute;
+    left: 340px;
+    width: 55px; 
+    top: 70px
+
+  }
+}
+
+
