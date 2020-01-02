@@ -47,16 +47,14 @@
 @media screen and (max-width: 600px)  {
   .box {
     position: relative;
-    width: 10em;
-    height: 10em;
+    width: 8.5em;
+    height: 8.5em;
 
-    left: 1em;
+    right: 1em;
     border-radius:30px;
     border: 1px solid #ccc;
     background: #fff;
     text-align: center;
-    vertical-align: middle;
-
     font-family: "Kristen ITC";
     font-size: 30px;
     background-color: #d82020;
