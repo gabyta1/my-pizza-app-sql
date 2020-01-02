@@ -12,7 +12,8 @@
 @media screen and (max-width: 600px)  {
   .butn {
     position: relative;
-     left: 16.5em;
+     left: -2em;
+     top: 5em;
   
   }
 }
