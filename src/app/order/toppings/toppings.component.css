@@ -17,8 +17,8 @@
     top: 90px;
     width: 200px;
     left: 5em;
-    padding-top: 10px;
-    margin-bottom: 10px;
+    padding-top: 1px;
+    margin-bottom: 2px;
   
   }
 }
@@ -28,6 +28,7 @@
     position: relative; 
     left: -3em;
     top: 60px;
+    padding-bottom: 10px;
    
   }
 }

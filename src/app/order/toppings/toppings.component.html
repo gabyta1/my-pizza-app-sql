@@ -12,7 +12,7 @@
 
 
 <div class="col-md-12 col-xs-5 butn">
-  <button *ngIf="!orderService.getEditButton()" class="btn btn-primary " style="position: relative; left: 45%; top: 100px;" (click)="onContinue()">Continue</button>
+  <button *ngIf="!orderService.getEditButton()" class="btn btn-primary " style="position: relative; left: 45%; top: 100px;margin-bottom: 10px;" (click)="onContinue()">Continue</button>
   <button *ngIf="orderService.getEditButton()" class="btn btn-primary " style=" position: relative; left: 45%; top: 100px;" (click)="onEdit()">Edit</button>
 </div>
 </div>
