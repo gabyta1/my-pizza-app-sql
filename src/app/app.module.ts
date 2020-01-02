@@ -46,6 +46,7 @@ import {MatInputModule, MatNativeDateModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { EndOrderComponent } from './end-order/end-order.component';
 
 
 
@@ -94,7 +95,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     DetailsOrdersComponent,
     DetailOrderComponent,
     FilterPipe,
-    HomeComponent
+    HomeComponent,
+    EndOrderComponent
   ],
   imports: [
     BrowserModule,

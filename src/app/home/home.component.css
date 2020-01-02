@@ -3,7 +3,7 @@
   bottom: 400px;
   left: 200px;
   color: white;
-  font-size: 80px;
+  font-size: 6vw;
   font-family: Cooper Black;
   text-shadow: 10px 2px black;
 
@@ -25,7 +25,7 @@
 
 .img-big{
   width: 100%;
-  height: auto;
+  height: 35em;
 }
 
 button{

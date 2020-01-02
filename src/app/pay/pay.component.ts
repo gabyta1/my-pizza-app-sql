@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { OrderService } from './../order/order.service';
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
@@ -10,7 +11,7 @@ import {NgForm} from '@angular/forms';
 export class PayComponent implements OnInit {
  id: string;
  typeCard: string;
-  constructor(private orderService: OrderService) { }
+  constructor(private orderService: OrderService, private router: Router) { }
 
 
   ngOnInit() {
@@ -24,6 +25,7 @@ export class PayComponent implements OnInit {
     this.orderService.createPost();
     this.orderService.setOrderToDb();
     this.orderService.setOrderItemDb();
+    this.router.navigate(['order-status']);
   }
 
 

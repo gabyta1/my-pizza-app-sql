@@ -1,3 +1,4 @@
+import { EndOrderComponent } from './end-order/end-order.component';
 import { HomeComponent } from './home/home.component';
 import { DetailsOrdersComponent } from './manage/details-orders/details-orders.component';
 import { AddMenuComponent } from './manage/manage-menu/add-menu/add-menu.component';
@@ -49,7 +50,8 @@ const appRouts: Routes = [
     {path: 'details-orders', component: DetailsOrdersComponent, children: [
       {path: ':id', component: DetailOrderComponent}
     ]}
-  ]}
+  ]},
+  {path: 'order-status', component: EndOrderComponent}
   ];
 
 
