@@ -18,5 +18,9 @@ export class HeaderComponent implements OnInit {
     this.orderService.setOpenCloseElem(true);
   }
 
+  toHome() {
+    window.location.replace('');
+  }
+
 
 }

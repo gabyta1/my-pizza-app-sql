@@ -11,13 +11,13 @@ export class EndOrderComponent implements OnInit {
   constructor( private router: Router) { }
 
   ngOnInit() {
-    // setTimeout(() => {
-    //   window.location.replace('home');
-    // }, 5000);
+    setTimeout(() => {
+      window.location.replace('');
+    }, 5000);
   }
 
   toHome() {
-    window.location.replace('home');
+    window.location.replace('');
   }
 
 }
