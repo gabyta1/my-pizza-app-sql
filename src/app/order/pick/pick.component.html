@@ -1,11 +1,14 @@
 <a routerLink="order/pick"></a>
+<div class="col-xs-12">
 <div class="box" (click)="onSelfChoice()" *ngIf="(selfChoice && deliChoice)">
   <p>Self-Pickup</p>
 
 </div>
 
+
 <div class="box" (click)="onDeliveryChoice()" *ngIf="(deliChoice && selfChoice)">
   <p>Delivery</p>
+</div>
 </div>
 
 <app-timepicker *ngIf="orderService.getTimeBox()"></app-timepicker>
