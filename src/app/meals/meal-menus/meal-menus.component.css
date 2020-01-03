@@ -1,7 +1,23 @@
 
+.butn{
+   width: 90px;
+   position: relative;
+   bottom: 10px;
+   left: 85%;
+   margin-top: 20px;
+   margin-bottom: 30px
+}
 
-
-
+@media screen and (max-width: 600px)  {
+  .butn{
+    width: 90px;
+    position: relative;
+    bottom: 10px;
+    left: 90%;
+    margin-top: 20px;
+    margin-bottom: 30px
+  }
+}
 
 
 

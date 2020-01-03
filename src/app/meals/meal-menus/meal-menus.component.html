@@ -7,14 +7,8 @@
                 [index]="i">
 </app-meal-item>
 
-<div class="col-md-12 col-xs-12">
-  <button  class="btn btn-danger "
-          style="width: 90px;
-          position: relative;
-          bottom: 10px;
-          left: 85%;
-          margin-top: 20px;
-          margin-bottom: 30px"
+<div class="col-md-12 col-xs-10">
+  <button  class="btn btn-danger butn"
           *ngIf="id === 'beverages'" [disabled]="orderService.getButton()"  (click)="addToCart()">Add</button>
         </div>
 

@@ -28,7 +28,7 @@
     position: relative; 
     left: -3em;
     top: 60px;
-    padding-bottom: 10px;
+    margin-block-end: 10px;
    
   }
 }
