@@ -46,6 +46,7 @@ export class ToppingsComponent implements OnInit {
     this.mealService.resetTopping();
     this.orderService.resetSelectedTopping();
     this.orderService.setEditButton();
+    this.router.navigate(['order']);
     this.orderService.setOpenCloseElem(true);
   }
 

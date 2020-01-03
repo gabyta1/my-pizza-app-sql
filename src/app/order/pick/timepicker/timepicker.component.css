@@ -1,1 +1,23 @@
+.time{
+  position: relative;
+  top: 10em;
+  left: 30em;
+  width: 250px;
+  height: 150px;
+  border-radius:30px;
+  border: 1px solid black;
+}
 
+
+@media screen and (max-width: 600px)  {
+  .time {
+    position: relative;
+    top: 10em;
+    left: 5em;
+    width: 250px;
+    height: 150px;
+    border-radius:30px;
+    border: 1px solid black;
+
+  }
+}
