@@ -13,7 +13,7 @@ const db = mysql.createConnection({
   host     : 'remotemysql.com',
   user     : 'rZWnASg0PE',
   password : 'sMCZIaPVOi',
-  database : 'rZWnASg0PE'
+  database : 'rZWnASg0PE' 
 
 });
 
