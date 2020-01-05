@@ -38,7 +38,6 @@ export class MealItemComponent implements OnInit {
   onOrder() {
     this.mealService.setOrder(true);
     this.mealService.setOrderChoose(this.mealService.getMeals(this.index));
-    console.log(this.mealService.getOrderChoose());
     if (this.orderService.getOrder()) {
       this.router.navigate(['order/pick']);
     } else {

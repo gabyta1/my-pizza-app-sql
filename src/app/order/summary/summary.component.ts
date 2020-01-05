@@ -15,7 +15,6 @@ export class SummaryComponent implements OnInit {
 
   ngOnInit() {
     this.cart = this.orderService.getCart();
-    console.log(this.cart[0]);
   }
 
   onPay() {

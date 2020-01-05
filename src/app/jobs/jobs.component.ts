@@ -14,7 +14,6 @@ export class JobsComponent implements OnInit {
   }
   onAddItem(form: NgForm) {
     const value = form.value;
-    console.log(value);
     form.reset();
   }
 

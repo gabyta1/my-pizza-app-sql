@@ -17,14 +17,11 @@ export class DetailOrderComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
      this.numOrder = params['id'];
    });
-    console.log(this.numOrder);
     this.manageService.getOrderDetail(this.numOrder).subscribe((res) => {
       this.order = res;
-      console.log(this.order);
   });
     this.manageService.getToppingOrderDb(this.numOrder).subscribe((res) => {
     this.topping = res;
-    console.log(this.topping);
   });
   }
 

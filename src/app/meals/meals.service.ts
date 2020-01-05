@@ -79,20 +79,15 @@ export class MealsService {
     this.http.get('/meals')
     .pipe(
       map(responseData => {
-        console.log(responseData);
         for (const key in responseData) {     // change to array
           if (responseData.hasOwnProperty(key)) {
-            this.menu.push({ ...responseData[key] });   // have a problem to write 'this' in ES6 function
+            this.menu.push({ ...responseData[key] });   
           }
         }
-        console.log(this.menu);
         return this.menu;
-
       })
     )
     .subscribe(posts => {
-      // ...
-      console.log(posts);
       return posts;
     });
   }
@@ -106,21 +101,15 @@ export class MealsService {
     .pipe(
       map(responseData => {
         this.menu = [];
-        console.log(responseData);
         for (const key in responseData) {
           if (responseData.hasOwnProperty(key)) {
             this.menu.push({ ...responseData[key]});   // have a problem to write 'this' in ES6 function
           }
         }
-        console.log(this.menu);
         return this.menu;
       })
     );
-
-   // this.getHttp();
-   // console.log( 'helloooo' + this.menu);
-    //return this.menu.slice();
-  }
+ }
 
   public getMenu() {
     return this.menu.slice();

@@ -31,8 +31,6 @@ export class MealMenusComponent implements OnInit,  OnDestroy {
   ngOnInit() {
   this.mlService.getMeal().subscribe(res  => {
      this.menu = res;
-     console.log(this.menu);
-     console.log(window.innerWidth);
   });
 
 

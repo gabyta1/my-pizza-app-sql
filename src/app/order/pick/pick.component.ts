@@ -44,7 +44,6 @@ export class PickComponent implements OnInit {
 
   onChoiceSelfPick() {
     this.selfPickChoice = false;
-    console.log(this.cityName);
     this.idBranch = this.storeService.findCityId(this.cityName);
     this.orderService.setdetailsDelivery(this.idBranch, 0 , '');
     if (this.orderService.getId() === 'pizza') {
@@ -58,25 +57,8 @@ export class PickComponent implements OnInit {
     }
   }
 
-  // onChoiceDelivery() {
-  //   this.deliveryChoice = false;
-  //   console.log(this.cityName);
-  //   if (this.orderService.getId() === 'pizza') {
-  //     this.router.navigate(['order/toppings']);
-  //   } else {
-  //     this.carts = new Cart(this.mealService.getOrderChooseName(), this.mealService.getOrderChoosePrice(),
-  //       this.mealService.getTopping(), this.orderService.getCnt());
-  //     this.orderService.addItemCart(this.carts);
-  //     this.router.navigate(['order']);
-  //   }
-
-  // }
-
   onAddItem(f: NgForm) {
-    console.log(f.value);
     this.deliveryChoice = false;
-    console.log(f.value.street + ' ' + f.value.homenum);
-    console.log(this.cityName);
     this.idBranch = this.storeService.findCityId(this.cityName);
     this.orderService.setdetailsDelivery(this.idBranch, f.value.homenum, f.value.street);
     if (this.orderService.getId() === 'pizza') {

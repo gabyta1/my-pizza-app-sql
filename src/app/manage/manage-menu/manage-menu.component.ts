@@ -29,12 +29,10 @@ export class ManageMenuComponent implements OnInit {
 
     async DeleteItem(i: number, name: string, menuId: number) {
     if (confirm('Are you sure to delete ' + name)) {
-        console.log(name);
         this.menus =  await this.manageService.deleteItem(name, this.menus, menuId);
 
     }
     this.item = this.mlservice.getMeals(i);
-    console.log(this.item);
   }
 
   addItem() {

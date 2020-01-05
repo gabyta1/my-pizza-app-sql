@@ -67,13 +67,11 @@ public getOrder() {
     return this.http.get(BACKEND_URL + '/order-details').pipe(
       map(responseData => {
         this.allOrders = [];
-        console.log(responseData);
         for (const key in responseData) {
           if (responseData.hasOwnProperty(key)) {
-            this.allOrders.push({ ...responseData[key]});   // have a problem to write 'this' in ES6 function
+            this.allOrders.push({ ...responseData[key]});   
           }
         }
-        console.log(this.allOrders);
         return this.allOrders;
       })
     );
@@ -83,13 +81,11 @@ public getOrder() {
     return this.http.get(BACKEND_URL + '/order-details/' + id).pipe(
       map(responseData => {
         this.order = [];
-        console.log(responseData);
         for (const key in responseData) {
           if (responseData.hasOwnProperty(key)) {
             this.order.push({ ...responseData[key]});   // have a problem to write 'this' in ES6 function
           }
         }
-        console.log(this.order);
         return this.order;
       })
     );
@@ -99,13 +95,11 @@ public getOrder() {
     return this.http.get(BACKEND_URL + '/order-topping/' + id).pipe(
       map(responseData => {
         this.topping = [];
-        console.log(responseData);
         for (const key in responseData) {
           if (responseData.hasOwnProperty(key)) {
             this.topping.push({ ...responseData[key]});   // have a problem to write 'this' in ES6 function
           }
         }
-        console.log(this.topping);
         return this.topping;
       })
     );
@@ -122,34 +116,16 @@ searchNumOrder(num: number) {
   return this.http.get(BACKEND_URL + '/searchNumOrder/' + num ).pipe(
     map(responseData => {
       this.numBySearchOrder = [];
-      console.log(responseData);
       for (const key in responseData) {
         if (responseData.hasOwnProperty(key)) {
           this.numBySearchOrder.push({ ...responseData[key]});   // have a problem to write 'this' in ES6 function
         }
       }
-      console.log(this.numBySearchOrder);
       return this.numBySearchOrder;
     })
   );
 }
 
-// filterStatus(status: string) {
-//   console.log(status);
-//   return this.http.get('http://localhost:3000/filterStatus/' + status).pipe(
-//     map(responseData => {
-//       this.numBySearchOrder = [];
-//       console.log(responseData);
-//       for (const key in responseData) {
-//         if (responseData.hasOwnProperty(key)) {
-//           this.numBySearchOrder.push({ ...responseData[key]});   // have a problem to write 'this' in ES6 function
-//         }
-//       }
-//       console.log(this.numBySearchOrder);
-//       return this.numBySearchOrder;
-//     })
-//   );
-// }
 
 getCustomDate(date: string) {
   if (date === undefined ) {
@@ -159,7 +135,6 @@ getCustomDate(date: string) {
   const day = date.substr(9, 2);
   const dayAfterChange  = +day + 1;
   const year = date.substr(1, 4);
-  console.log(month + ' ' + day + ' ' + year);
   return year + '-' + month + '-' + dayAfterChange;
   }
 
@@ -169,13 +144,11 @@ filterOrderDataByStatus(status: string, fromDate: string, toDate: string) {
   return this.http.get(BACKEND_URL + '/filterOrderDataByStatus/' + status + '?fromDate=' + fromDate + '&toDate=' + toDate).pipe(
     map(responseData => {
       this.numBySearchOrder = [];
-      console.log(responseData);
       for (const key in responseData) {
         if (responseData.hasOwnProperty(key)) {
           this.numBySearchOrder.push({ ...responseData[key]});   // have a problem to write 'this' in ES6 function
         }
       }
-      console.log(this.numBySearchOrder);
       return this.numBySearchOrder;
     })
   );
@@ -185,13 +158,11 @@ filterOrderDataByType(type: string, fromDate: string, toDate: string) {
   return this.http.get(BACKEND_URL + '/filterOrderDataByType/' + type + '?fromDate=' + fromDate + '&toDate=' + toDate).pipe(
     map(responseData => {
       this.numBySearchOrder = [];
-      console.log(responseData);
       for (const key in responseData) {
         if (responseData.hasOwnProperty(key)) {
           this.numBySearchOrder.push({ ...responseData[key]});   // have a problem to write 'this' in ES6 function
         }
       }
-      console.log(this.numBySearchOrder);
       return this.numBySearchOrder;
     })
   );
@@ -201,13 +172,11 @@ filterOrderData(status: string, type: string, fromDate: string, toDate: string) 
                      '&type=' + type).pipe(
     map(responseData => {
       this.numBySearchOrder = [];
-      console.log(responseData);
       for (const key in responseData) {
         if (responseData.hasOwnProperty(key)) {
           this.numBySearchOrder.push({ ...responseData[key]});   // have a problem to write 'this' in ES6 function
         }
       }
-      console.log(this.numBySearchOrder);
       return this.numBySearchOrder;
     })
   );

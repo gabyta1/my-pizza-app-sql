@@ -17,7 +17,6 @@ export class StoreListComponent implements OnInit {
   ngOnInit() {
   this.stService.getStoreDb().subscribe((res) => {
     this.stores = res;
-    console.log(this.stores);
   });
 }
 }

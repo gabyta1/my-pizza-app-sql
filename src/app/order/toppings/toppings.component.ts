@@ -26,15 +26,10 @@ export class ToppingsComponent implements OnInit {
 
     this.carts = new Cart(this.mealService.getOrderChooseName(),
       this.mealService.getOrderChoosePrice(), this.mealService.getTopping(), this.orderService.getCnt());
-    console.log(this.mealService.getOrderChooseName());
     this.orderService.addItemCart(this.carts);
     this.top = this.mealService.getTopping();
-    console.log(this.top);
     this.orderService.addPrice(this.top.length);
     this.mealService.resetTopping();
-
-    console.log(this.top);
-
     this.orderService.resetSelectedTopping();
     this.router.navigate(['order']);
     this.orderService.setOpenCloseElem(true);

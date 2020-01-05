@@ -72,7 +72,6 @@ public setTimeOrder(hour: number, minute: number) {
 }
 
 public getTimeOrder() {
-  console.log(this.hour + ':' + this.minute);
   return this.hour + ':' + this.minute;
 }
 
@@ -185,7 +184,6 @@ public setTime() {
 }
 
 public getEditOrderTopping(index: number) {
-  console.log( this.cart[index].topping);
   return  this.cart[index].topping.slice();
 }
 
@@ -227,10 +225,8 @@ public createPost() {
 }
 
 public setOrderToDb() {
-  console.log(this.numOrder);
   const d = this.setDate();
   const t = this.setTime();
-  console.log(d);
   const post = {user_id: this.userId,
                        num_order: this.numOrder,
                        branch: this.idBranch,
@@ -253,13 +249,9 @@ public getNumOrder() {
    let x: any;
 
     for (x in numOrder) {
-      console.log(numOrder[x].num_order);
       this.numOrder = numOrder[x].num_order;
-      console.log(this.numOrder);
     }
     this.numOrder += 12;
-    console.log(this.numOrder);
-
   });
 }
 
@@ -269,8 +261,7 @@ let post: any;
 
 for ( const x of this.cart) {
   let orderItemId: any;
-  console.log('name:' + x.name);
-  console.log('name:' + x.topping.length);
+
 
   post = {
       order_num: this.numOrder,
@@ -279,10 +270,6 @@ for ( const x of this.cart) {
   this.http.post(BACKEND_URL + '/ordersItem', post).subscribe(async (res) => {
 
     orderItemId = await this.getOiId(res);
-      // for (let x in res) {
-      //   console.log(res[x].oi_id)
-      // }
-    console.log(orderItemId.oi_id);
     if (x.topping.length > 0) {
       for (const y of x.topping) {
         post = {
@@ -298,9 +285,6 @@ for ( const x of this.cart) {
     }
 
     });
-  console.log('im not unde!!!!' + orderItemId);
-
-
 
           }
 }

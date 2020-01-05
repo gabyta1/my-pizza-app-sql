@@ -36,13 +36,11 @@ export class BranchService {
        return this.http.get(BACKEND_URL  + '/branch').pipe(
         map(responseData => {
           this.stores = [];
-          console.log(responseData);
           for (const key in responseData) {
             if (responseData.hasOwnProperty(key)) {
-              this.stores.push({ ...responseData[key]});   // have a problem to write 'this' in ES6 function
+              this.stores.push({ ...responseData[key]});  
             }
           }
-          console.log(this.stores);
           return this.stores;
         })
       );

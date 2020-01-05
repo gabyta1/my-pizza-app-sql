@@ -36,7 +36,6 @@ export class AddMenuComponent implements OnInit {
       this.item.imagePathBack = this.replaceFileBackImage;
     }
     this.manageService.addItem(this.item);
-    console.log(this.item);
     this.manageService.setTable(this.manageService.getTable());
     this.router.navigate(['manage/menu']);
 

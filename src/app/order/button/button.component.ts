@@ -22,11 +22,9 @@ export class ButtonComponent {
     if (!this.orderService.getEditButton()) {
     this.topping.selected = !this.topping.selected;
     if (this.topping.selected) {
-      console.log(this.topping.selected);
       this.mealService.addTopping(this.topping);
     } else {
         this.mealService.decTopping(this.topping.name);
-        console.log(this.topping.selected);
     }
   } else {
     this.topping.selected = !this.topping.selected;

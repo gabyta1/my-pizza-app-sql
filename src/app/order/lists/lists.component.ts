@@ -23,8 +23,6 @@ export class ListsComponent implements OnInit {
   }
 
   heppend() {
-    console.log(this.try);
-    console.log(this.index);
     this.orderService.DeleteItemCart(this.index);
   }
   editOrder() {
@@ -35,7 +33,6 @@ export class ListsComponent implements OnInit {
       topping.selected = isSelected;
       return topping;
     });
-    console.log(this.toppings);
     this.orderService.setIndexEditCart(this.index);
     this.orderService.setEditButton();
 

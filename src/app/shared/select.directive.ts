@@ -21,6 +21,5 @@ export class SelectDirective implements AfterViewChecked {
 
     @HostListener('mousedown') onmousedown() {
         this.onSelect.emit(this.elRef.nativeElement);
-        console.log(this.control);
       }
 }

@@ -25,7 +25,6 @@ filterType = 'Filter Type';
   ngOnInit() {
     this.manageService.getOrderDetails().subscribe(res => {
       this.orders = res;
-      console.log(this.orders);
       this.manageService.setTable(false);
 
     });
@@ -48,13 +47,7 @@ filterType = 'Filter Type';
      this.search = null;
   }
 
-  // filterStatus() {
-  //   this.backAllOrder = !this.backAllOrder;
-  //   this.manageService.filterStatus(this.filter).subscribe(res => {
-  //      this.orders = res;
-  //    });
-  //   console.log(this.fromDate);
-  // }
+
 
   filterData() {
    this.backAllOrder = true;

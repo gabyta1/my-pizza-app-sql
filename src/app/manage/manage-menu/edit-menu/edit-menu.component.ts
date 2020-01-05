@@ -22,7 +22,6 @@ export class EditMenuComponent implements OnInit {
   }
 
   onEditItem(f: NgForm) {
-    console.log(this.item);
     if (this.fileFrontImage && this.fileBackImage) {
       this.replaceFileFrontImage = this.fileFrontImage.replace('C:\\fakepath\\', 'assets/img/');
       this.replaceFileBackImage = this.fileBackImage.replace('C:\\fakepath\\', 'assets/img/');
