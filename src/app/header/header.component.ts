@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { OrderService } from './../order/order.service';
 import { Component, OnInit } from '@angular/core';
 import {MealsService} from '../meals/meals.service';
@@ -9,7 +10,8 @@ import {MealsService} from '../meals/meals.service';
 })
 export class HeaderComponent implements OnInit {
   isCollapsed = true;
-  constructor(public mealService: MealsService, private orderService: OrderService) { }
+  pass = 'Pizzato';
+  constructor(public mealService: MealsService, private orderService: OrderService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -20,6 +22,18 @@ export class HeaderComponent implements OnInit {
 
   toHome() {
     window.location.replace('');
+  }
+
+  toCheck() {
+    const pass = prompt('Please Enter Password', 'password');
+
+    if ( pass === this.pass) {
+      this.router.navigate(['manage/menu']);
+    } else {
+    confirm('Wrong Password');
+    this.router.navigate(['home']);
+    return false;
+    }
   }
 
 
