@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 
 
 app.get('/', function(req, res) {
-  console.log("YES HEROku")
+ 
   res.sendFile(path.join(__dirname,'/dist/my-pizza-app-sql/index.html'));
  // res.sendFile( path.resolve('src/index.html') )
   //res.sendFile(`/src/index.html`)
@@ -46,7 +46,7 @@ app.get('/createNewTable', (req,res) => {
     if(err){
       throw err
     }
-    console.log(result)
+  
     res.send('posted...!')
 
   })
@@ -59,7 +59,7 @@ app.get('/insertItems', (req,res) => {
     if(err){
       throw err
     }
-    console.log(result)
+   
     res.send('posted 1,2,3!')
 
   })
@@ -72,7 +72,7 @@ app.get('/meals',  (req,res) =>{
     if(err){
       throw err
     }
-    console.log(result)
+   
     res.status(201).send(result)
   })
 
@@ -81,7 +81,7 @@ app.get('/meals',  (req,res) =>{
 
 app.post('/users',  (req, res) => {
   let sql ='INSERT INTO users SET ?'
-  console.log(req.body)
+  
   db.query(sql,{user_id: req.body.user_id,email: req.body.email,phone: req.body.phone,
                 street: req.body.street, num_home: req.body.homeNumber}, (err,result) => {
     if(err){
@@ -116,7 +116,7 @@ app.get('/num_order', (req,res) => {
     if(err){
       throw err
     }
-    console.log(result)
+   
     res.status(201).send(result)
   })
 })
@@ -127,7 +127,7 @@ app.get('/branch', (req,res) => {
     if(err){
       throw err
     }
-    console.log(result)
+  
     res.status(201).send(result)
 
   })
@@ -137,27 +137,10 @@ app.post('/ordersItem',(req,res) => {
   let topping_id,name_id
   let order_id
   findMenu_id(req.body.name_id,req).then( (result) =>{
-    console.log('i want id' + '' + result.oi_id)
-    //console.log('MY ORDER ID.... ' + result[0].oi_id)
+
     res.status(201).send(result)
   }
 )
-
-
-
-
-
-// db.query(sql,{oi_id: req.body.oi_id,
-//   order_num: req.body.order_num,
-//   m_id: id,
-//   topping_id: req.body.topping_id},(err,result) => {
-//     if(err){
-//       throw err
-//     }
-//     console.log(result)
-//     console.log('its my value1!!!!!' + id)
-//     res.status(201).send(result)
-//   })
 
 
 })
@@ -180,10 +163,7 @@ let sql = `select m_name, menu_id from menu where m_name = '${m_menu}'`;
   if(err){
     throw err
   }
-  console.log(result)
 
-
-    console.log('Myyyyyyyyyyyy id' + result[0].menu_id)
     callback(result[0].menu_id);
 
   // return result.menu_id
@@ -204,40 +184,6 @@ const findMenu_id = async (m_menu,req) =>{
 }
 
 
-// const findMenu_id = async (m_menu,req) =>{
-//    let orderItemId = await getOrderItemIdDb()
-//    let t = 0;
-//    orderItemId++
-//    console.log( 'my orderItem is!!!!!' + orderItemId)
-
-//   let q = await findMenuNameToId(m_menu)
-//   console.log('my QQQQQQQ!!!!!!' + q)
-//   if(req.body.topping_id){
-//   t = await findMenuNameToId(req.body.topping_id)
-//   }else {
-//     orderItemId += Math.floor(Math.random()*40)
-//   }
-//   insertOrderItemDb(req, q, t , orderItemId)
-
-//   return {res: 'sucsess to insert to DB'}
-// }
-
-// const findMenu_id = (m_menu,req) =>{
-//   return new Promise((resolve,reject) => {
-//  let sql = `select m_name, menu_id from menu where m_name = '${m_menu}'`;
-//   let q =  db.query(sql, (err,result) => {
-//   if(err){
-//     throw err
-//   }
-//     console.log('Myyyyyyyyyyyy id' + result[0].menu_id)
-//    insertOrderItemDb(req,result[0].menu_id)
-//    resolve({res: 'sucess to insert to db' })
-
-// })
-
-//   })
-// }
-
 
 const insertOrderItemDb = (req,menu_id, orderItemId) => {
   let insert = 'INSERT INTO order_item SET ?'
@@ -248,7 +194,7 @@ const insertOrderItemDb = (req,menu_id, orderItemId) => {
       if(err){
         throw err
       }
-      console.log(result)
+   
 
 
     })
@@ -263,19 +209,16 @@ const insertPizzaOrderDb = (oi_id,pizza_id,topping_id) => {
                       if(err){
                         throw err
                       }
-                      console.log(result)
                     })
 }
 
  findMenuNameToId = (m_menu) => {
-   console.log(m_menu);
     return new Promise( (resolve, reject) =>{
       let sql = `select m_name, menu_id from menu where m_name = '${m_menu}'`;
       let q =  db.query(sql, (err,result) => {
       if(err){
         throw err
       }
-       console.log('Myyyyyyyyyyyy id' + result[0].menu_id)
        resolve( result[0].menu_id)
 
     })
@@ -289,7 +232,6 @@ const insertPizzaOrderDb = (oi_id,pizza_id,topping_id) => {
     if(err){
       throw err
     }
-    console.log(result)
     resolve(result[0].oi_id)
   })
 })
@@ -297,18 +239,15 @@ const insertPizzaOrderDb = (oi_id,pizza_id,topping_id) => {
 
  app.delete('/deleteItemMenu/:menu_id', (req,res) => {
    let sql = `delete from menu where menu_id = '${req.params.menu_id}'`
-   console.log(req.params.name)
    db.query(sql, (err,result) => {
     if(err){
       throw err
     }
-    console.log(result)
     res.status(201).send({res:'the delete successed'})
   })
  } )
 
  app.patch('/editItemMenu', (req,res) => {
-   console.log(req.body.menu_id)
    let sql =`update menu set m_name='${req.body.m_name}',
              m_description='${req.body.m_description}',
              imagePathFront='${req.body.imagePathFront}',
@@ -320,7 +259,6 @@ const insertPizzaOrderDb = (oi_id,pizza_id,topping_id) => {
               if(err){
                 throw err
               }
-              console.log(result)
               res.status(201).send({res:'the edit successed'})
             })
  })
@@ -334,7 +272,6 @@ const insertPizzaOrderDb = (oi_id,pizza_id,topping_id) => {
         if(err){
           throw err
         }
-        console.log(result)
         res.status(201).send({res:'the add successed'})
       })
  })
@@ -349,7 +286,6 @@ const insertPizzaOrderDb = (oi_id,pizza_id,topping_id) => {
     if(err){
       throw err
     }
-    console.log(result)
     res.status(201).send(result)
   })
  })
@@ -372,7 +308,6 @@ const insertPizzaOrderDb = (oi_id,pizza_id,topping_id) => {
    if(err){
      throw err
    }
-   console.log(result)
    res.status(201).send(result)
  })
 })
@@ -396,20 +331,17 @@ app.get('/order-topping/:id',(req,res) => {
    if(err){
      throw err
    }
-   console.log(result)
    res.status(201).send(result)
  })
 })
 
 app.patch('/update-status' ,(req,res) => {
-  console.log(req.body.menu_id)
   let sql =`update orders set o_status='${req.body.status}'
             where num_order= ${req.body.numOrder}`
             db.query(sql, (err,result) => {
              if(err){
                throw err
              }
-             console.log(result)
              res.status(201).send({res:'the update successed'})
            })
 })
@@ -425,7 +357,6 @@ app.get('/searchNumOrder/:id',(req,res) => {
    if(err){
      throw err
    }
-   console.log(result)
    res.status(201).send(result)
  })
 })
@@ -436,66 +367,55 @@ app.get('/filterStatus/:id', (req, res) => {
   inner join branch as b
   on  b.b_id=o.branch_id
   where o.o_status='${req.params.id}'`
-  console.log('helloo ' + req.params.id)
   db.query(sql, (err,result) => {
         if(err) {
           throw err
         }
-        console.log(result)
         res.status(201).send(result)
   })
 })
 
 app.get('/filterOrderData/:id',(req, res) => {
   const queryParameter = req.query;
-  console.log(queryParameter.fromDate);
   let sql = `select o.num_order,o.o_type,CONVERT(o.o_date,CHAR) o_date,o.pick_time,o.price,b.city, o.o_status
   from orders as o
   inner join branch as b
   on  b.b_id=o.branch_id
   where o.o_status='${req.params.id}' and o.o_type='${queryParameter.type}' and o.o_date between '${queryParameter.fromDate}' and '${queryParameter.toDate}'`
-  console.log('helloo ' + req.params.id)
   db.query(sql, (err,result) => {
         if(err) {
           throw err
         }
-        console.log(result)
         res.status(201).send(result)
   })
 } )
 
 app.get('/filterOrderDataByType/:id',(req, res) => {
   const queryParameter = req.query;
-  console.log(queryParameter.fromDate);
   let sql = `select o.num_order,o.o_type,CONVERT(o.o_date,CHAR) o_date,o.pick_time,o.price,b.city, o.o_status
   from orders as o
   inner join branch as b
   on  b.b_id=o.branch_id
   where o.o_type='${req.params.id}' and o.o_date between '${queryParameter.fromDate}' and '${queryParameter.toDate}'`
-  console.log('helloo ' + req.params.id)
   db.query(sql, (err,result) => {
         if(err) {
           throw err
         }
-        console.log(result)
         res.status(201).send(result)
   })
 } )
 
 app.get('/filterOrderDataByStatus/:id',(req, res) => {
   const queryParameter = req.query;
-  console.log(queryParameter.fromDate);
   let sql = `select o.num_order,o.o_type,CONVERT(o.o_date,CHAR) o_date,o.pick_time,o.price,b.city, o.o_status
   from orders as o
   inner join branch as b
   on  b.b_id=o.branch_id
   where o.o_status='${req.params.id}' and o.o_date between '${queryParameter.fromDate}' and '${queryParameter.toDate}'`
-  console.log('helloo ' + req.params.id)
   db.query(sql, (err,result) => {
         if(err) {
           throw err
         }
-        console.log(result)
         res.status(201).send(result)
   })
 } )
